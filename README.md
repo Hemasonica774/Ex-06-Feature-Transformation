@@ -83,7 +83,7 @@ plt.show()
 ```
 # Output
 
-Feature Transformation - Data_to_Transform.csv
+## Feature Transformation - Data_to_Transform.csv
 
 ![image](https://user-images.githubusercontent.com/118361409/234178783-e702fec6-ae97-4514-8419-9e53c9ba63d7.png)
 
@@ -96,27 +96,27 @@ Feature Transformation - Data_to_Transform.csv
 ![image](https://user-images.githubusercontent.com/118361409/234178925-5d8faeb0-1110-4d12-881e-3e3a5ffb18d8.png)
 
 
-Log Transformation
+## Log Transformation
 
 ![image](https://user-images.githubusercontent.com/118361409/234178994-a976fc77-03d4-4ee6-b501-08fb3b02d2bc.png)
 
 
-Reciprocal Transformation
+## Reciprocal Transformation
 
 ![image](https://user-images.githubusercontent.com/118361409/234179020-3081c29d-d9f8-4351-bdb6-6299c0aa74ce.png)
 
-SquareRoot Transformation
+## SquareRoot Transformation
 
 ![image](https://user-images.githubusercontent.com/118361409/234179071-430a9902-eed1-4247-ad88-419297849eb2.png)
 
-Power Transformation
+## Power Transformation
 
 ![image](https://user-images.githubusercontent.com/118361409/234179108-ed592042-7a37-4389-9610-27ae58eb50d8.png)
 
 ![image](https://user-images.githubusercontent.com/118361409/234179136-a309e951-f13d-4ffe-ab0b-c84d543fc841.png)
 
 
-Quantile Transformation
+## Quantile Transformation
 
 ![image](https://user-images.githubusercontent.com/118361409/234179167-fd068fef-d1c8-4c51-8b46-4eff21a71f76.png)
 
