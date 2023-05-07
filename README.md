@@ -106,6 +106,8 @@ plt.show()
 
 ## Before Transformation
 
+![image](https://user-images.githubusercontent.com/118361409/236669513-50a0be50-79b6-489e-913b-72d06bf66c55.png)
+
 ![image](https://user-images.githubusercontent.com/118361409/236669102-332dd1d6-ddb5-48b5-ad58-1f0ceea66f78.png)
 
 ![image](https://user-images.githubusercontent.com/118361409/236669111-4455a75c-7fdd-4718-ac45-61d973374556.png)
