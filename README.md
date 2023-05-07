@@ -112,7 +112,7 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/118361409/236669126-5d91e7b1-eda6-40fe-ad44-b1c58eccf24e.png)
 
-![image](https://user-images.githubusercontent.com/118361409/236669142-69adb1ff-86d1-4f89-aea2-7d907e76aa72.png)
+
 
 ## Log Transformation
 
