@@ -28,9 +28,8 @@ Save the data to the file
 
 ```
 
-Name :P.Hemasonica
-Register Number : 212222230048
-Feature Transformation - Data_to_Transform.csv
+NAME:P.Hemasonica
+Register number:22003246
 
 
 import numpy as np
@@ -44,82 +43,98 @@ df.head()
 df.isnull().sum()
 df.info()
 df.describe()
+
 df1 = df.copy()
-sm.qqplot(df1.HighlyPositiveSkew,fit=True,line='45')
+sm.qqplot(df1['Highly Positive Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.HighlyNegativeSkew,fit=True,line='45')
+
+sm.qqplot(df1['Highly Negative Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.ModeratePositiveSkew,fit=True,line='45')
+
+sm.qqplot(df1['Moderate Positive Skew'],fit=True,line='45')
 plt.show()
-sm.qqplot(df1.ModerateNegativeSkew,fit=True,line='45')
+
+sm.qqplot(df1['Moderate Negative Skew'],fit=True,line='45')
 plt.show()
-df1['HighlyPositiveSkew'] = np.log(df1.HighlyPositiveSkew)
-sm.qqplot(df1.HighlyPositiveSkew,fit=True,line='45')
+
+df1['Highly Positive Skew'] = np.log(df1['Highly Positive Skew'])
+sm.qqplot(df1['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df2 = df.copy()
-df2['HighlyPositiveSkew'] = 1/df2.HighlyPositiveSkew
-sm.qqplot(df2.HighlyPositiveSkew,fit=True,line='45')
+df2['Highly Positive Skew'] = 1/df2['Highly Positive Skew']
+sm.qqplot(df2['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df3 = df.copy()
-df3['HighlyPositiveSkew'] = df3.HighlyPositiveSkew**(1/1.2)
-sm.qqplot(df2.HighlyPositiveSkew,fit=True,line='45')
+df3['Highly Positive Skew'] = df3['Highly Positive Skew']**(1/1.2)
+sm.qqplot(df2['Highly Positive Skew'],fit=True,line='45')
 plt.show()
+
 df4 = df.copy()
-df4['ModeratePositiveSkew_1'],parameters =stats.yeojohnson(df4.ModeratePositiveSkew)
-sm.qqplot(df4.ModeratePositiveSkew_1,fit=True,line='45')
+df4['Moderate Positive Skew_1'],parameters =stats.yeojohnson(df4['Moderate Positive Skew'])
+sm.qqplot(df4['Moderate Positive Skew_1'],fit=True,line='45')
 plt.show()
+
 from sklearn.preprocessing import PowerTransformer 
 trans = PowerTransformer("yeo-johnson")
 df5 = df.copy()
-df5['ModerateNegativeSkew_1'] = pd.DataFrame(trans.fit_transform(df5[['ModerateNegativeSkew']]))
-sm.qqplot(df5['ModerateNegativeSkew_1'],line='45')
+df5['Moderate Negative Skew_1'] = pd.DataFrame(trans.fit_transform(df5[['Moderate Negative Skew']]))
+sm.qqplot(df5['Moderate Negative Skew_1'],line='45')
 plt.show()
+
 from sklearn.preprocessing import QuantileTransformer
 qt = QuantileTransformer(output_distribution = 'normal')
-df5['ModerateNegativeSkew_2'] = pd.DataFrame(qt.fit_transform(df5[['ModerateNegativeSkew']]))
-sm.qqplot(df5['ModerateNegativeSkew_2'],line='45')
+df5['Moderate Negative Skew_2'] = pd.DataFrame(qt.fit_transform(df5[['Moderate Negative Skew']]))
+sm.qqplot(df5['Moderate Negative Skew_2'],line='45')
 plt.show()
+
 
 ```
 # Output
+## Data
 
-## Feature Transformation - Data_to_Transform.csv
+![image](https://user-images.githubusercontent.com/118361409/236668907-096722f7-16b4-4c08-a531-dede6e291196.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234178783-e702fec6-ae97-4514-8419-9e53c9ba63d7.png)
+![image](https://user-images.githubusercontent.com/118361409/236668917-7fd07aac-e8ba-42a1-aa07-584dda964f1f.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234178843-b0308ca5-51ef-4275-8c32-ab39d5d0c93e.png)
+![image](https://user-images.githubusercontent.com/118361409/236668925-77d2564c-afb1-4d48-bade-d9ab9266429f.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234178859-12f72d50-9397-4479-89e7-d982cd19c848.png)
+![image](https://user-images.githubusercontent.com/118361409/236668947-fdbac777-3115-4803-8163-51c78a9f0f28.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234178899-8827d06c-8395-4ade-aea4-0c2623d3db64.png)
+![image](https://user-images.githubusercontent.com/118361409/236668953-3717b304-a70d-4ae8-a677-c1c1e58d823f.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234178925-5d8faeb0-1110-4d12-881e-3e3a5ffb18d8.png)
+## Before Transformation
 
+![image](https://user-images.githubusercontent.com/118361409/236669102-332dd1d6-ddb5-48b5-ad58-1f0ceea66f78.png)
+
+![image](https://user-images.githubusercontent.com/118361409/236669111-4455a75c-7fdd-4718-ac45-61d973374556.png)
+
+![image](https://user-images.githubusercontent.com/118361409/236669126-5d91e7b1-eda6-40fe-ad44-b1c58eccf24e.png)
+
+![image](https://user-images.githubusercontent.com/118361409/236669142-69adb1ff-86d1-4f89-aea2-7d907e76aa72.png)
 
 ## Log Transformation
 
-![image](https://user-images.githubusercontent.com/118361409/234178994-a976fc77-03d4-4ee6-b501-08fb3b02d2bc.png)
-
+![image](https://user-images.githubusercontent.com/118361409/236669248-c7b29f19-72e2-4975-8114-944222e22839.png)
 
 ## Reciprocal Transformation
 
-![image](https://user-images.githubusercontent.com/118361409/234179020-3081c29d-d9f8-4351-bdb6-6299c0aa74ce.png)
+![image](https://user-images.githubusercontent.com/118361409/236669266-49b0bcad-72d2-4fe1-82e6-b2403366a4f2.png)
 
-## SquareRoot Transformation
+## Square root Transformation
 
-![image](https://user-images.githubusercontent.com/118361409/234179071-430a9902-eed1-4247-ad88-419297849eb2.png)
+![image](https://user-images.githubusercontent.com/118361409/236669330-f10b37bb-ebc2-4a23-89bf-10cd9132bac7.png)
+
+![image](https://user-images.githubusercontent.com/118361409/236669343-f87ce5e6-4cbc-448f-be8f-45c05f9f700f.png)
 
 ## Power Transformation
 
-![image](https://user-images.githubusercontent.com/118361409/234179108-ed592042-7a37-4389-9610-27ae58eb50d8.png)
+![image](https://user-images.githubusercontent.com/118361409/236669358-95eb58a6-5ad8-44b4-8d37-86d99002e110.png)
 
-![image](https://user-images.githubusercontent.com/118361409/234179136-a309e951-f13d-4ffe-ab0b-c84d543fc841.png)
+##Quantile Transformation
 
-
-## Quantile Transformation
-
-![image](https://user-images.githubusercontent.com/118361409/234179167-fd068fef-d1c8-4c51-8b46-4eff21a71f76.png)
-
+![image](https://user-images.githubusercontent.com/118361409/236669405-b15a19fa-1b2c-465f-85ac-aa2da5150f22.png)
 
 # RESULT:
 
